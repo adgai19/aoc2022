@@ -1,8 +1,6 @@
-package main
+package day1
 
 import (
-	"fmt"
-	"io/ioutil"
 	"sort"
 	"strconv"
 	"strings"
@@ -33,29 +31,4 @@ func Day1a(input string) int {
 func Day1b(input string) int {
 	out := common(input)
 	return out[len(out)-1] + out[len(out)-2] + out[len(out)-3]
-}
-
-func main() {
-	// 	string := `1000
-	// 2000
-	// 3000
-	//
-	// 4000
-	//
-	// 5000
-	// 6000
-	//
-	// 7000
-	// 8000
-	// 9000
-	//
-	// 10000`
-	file, err := ioutil.ReadFile("input.txt")
-	if err != nil {
-		println("err")
-
-	}
-	input := string(file)
-	fmt.Println(Day1a(input))
-	fmt.Println(Day1b(input))
 }

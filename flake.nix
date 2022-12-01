@@ -48,22 +48,23 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         nativeBuildInputs = [
+          godlv
+          golines
+          gotest
           pkgs.bashInteractive
+          pkgs.ginkgo
           pkgs.go
-          pkgs.golangci-lint
           pkgs.gofumpt
+          pkgs.golangci-lint
+          pkgs.gomodifytags
+          pkgs.gotests
+          pkgs.gotestsum
+          pkgs.gotools
           pkgs.iferr
           pkgs.impl
-          pkgs.gotestsum
-          pkgs.gomodifytags
           pkgs.mockgen
-          pkgs.richgo
-          pkgs.gotools
-          pkgs.gotests
           pkgs.reftools
-          golines
-          godlv
-          gotest
+          pkgs.richgo
         ];
 
         buildInputs = [ ];

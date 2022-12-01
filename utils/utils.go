@@ -2,8 +2,10 @@ package utils
 
 import (
 	"io/ioutil"
+	"reflect"
 	"strconv"
 	"strings"
+	"testing"
 )
 
 func ReadInput() string {
@@ -19,5 +21,21 @@ func SplitInt(input string) []int {
 		out = append(out, i)
 	}
 	return out
+}
+func SplitComma(input string) []string {
+	return strings.Split(input, ",")
+}
+func GetLines(input string) []string {
+	out := strings.Split(input, "\n")
+	for i, e := range out {
+		out[i] = strings.TrimSpace(e)
+	}
+	return out
 
+}
+func Assert[C any](t *testing.T, got, want C) {
+	t.Helper()
+	if !reflect.DeepEqual(want, got) {
+		t.Errorf("got %v but want %v", got, want)
+	}
 }

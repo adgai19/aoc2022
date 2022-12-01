@@ -1,0 +1,78 @@
+{
+  "nodes": {
+    "godlv": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1668689558,
+        "narHash": "sha256-/26wOIhMaI8FzLfKQq7kV8WcL1F9/ELNRA/9wfy/x8g=",
+        "owner": "go-delve",
+        "repo": "delve",
+        "rev": "a185d0eac1f5b84a3f7e35cc725f2151b4420dbd",
+        "type": "github"
+      },
+      "original": {
+        "owner": "go-delve",
+        "repo": "delve",
+        "type": "github"
+      }
+    },
+    "golines": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1664217450,
+        "narHash": "sha256-Zq2Qhqdwyw9SgRpKO1WeewSU2K81uWqTICzUKyYts1U=",
+        "owner": "segmentio",
+        "repo": "golines",
+        "rev": "d7d11e6ae11721865229b1d55b8862c8bd4ca719",
+        "type": "github"
+      },
+      "original": {
+        "owner": "segmentio",
+        "repo": "golines",
+        "type": "github"
+      }
+    },
+    "gotest-tools": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667675659,
+        "narHash": "sha256-QsvJhPN3mFnXAtfBjrtPqUFLjmbKAN9DxTLqo8PufPc=",
+        "owner": "gotestyourself",
+        "repo": "gotest.tools",
+        "rev": "f44676a54686a87dcccb32d90ec5d7dd78743332",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gotestyourself",
+        "repo": "gotest.tools",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1669809720,
+        "narHash": "sha256-RMT77f6CPOYtLLQ2esj+EJ1BPVWxf4RDidjrSvA5OhI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "227de2b3bbec142f912c09d5e8a1b4e778aa54fb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "godlv": "godlv",
+        "golines": "golines",
+        "gotest-tools": "gotest-tools",
+        "nixpkgs": "nixpkgs"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

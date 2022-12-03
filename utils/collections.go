@@ -51,8 +51,8 @@ func Filter(vs []string, f func(string) bool) []string {
 
 // Map returns a new slice containing the results of applying the function f to each string in the original slice.
 
-func Map(vs []string, f func(string) string) []string {
-	vsm := make([]string, len(vs))
+func Map[T any, V any](vs []T, f func(T) T) []T {
+	vsm := make([]T, len(vs))
 	for i, v := range vs {
 		vsm[i] = f(v)
 	}

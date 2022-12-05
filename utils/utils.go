@@ -8,8 +8,14 @@ import (
 	"testing"
 )
 
-func ReadInput() string {
-	file, _ := ioutil.ReadFile("input.txt")
+func ReadInput(filename string) string {
+	file, _ := ioutil.ReadFile(filename)
+	input := string(file)
+	return input
+}
+
+func ReadInputTest() string {
+	file, _ := ioutil.ReadFile("input_test.txt")
 	input := string(file)
 	return input
 }

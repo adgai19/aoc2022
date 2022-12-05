@@ -16,6 +16,22 @@
         "type": "github"
       }
     },
+    "gods": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1666026485,
+        "narHash": "sha256-FinTyBSNPe8LB40qCSX5kpETzuTgsh2C0u5Rnh8gRCE=",
+        "owner": "emirpasic",
+        "repo": "gods",
+        "rev": "5dd72bf1e03d45ade3a941c9675930ef306c5091",
+        "type": "github"
+      },
+      "original": {
+        "owner": "emirpasic",
+        "repo": "gods",
+        "type": "github"
+      }
+    },
     "golines": {
       "flake": false,
       "locked": {
@@ -48,6 +64,24 @@
         "type": "github"
       }
     },
+    "hashset": {
+      "flake": false,
+      "locked": {
+        "dir": "sets/hashset",
+        "lastModified": 1666026485,
+        "narHash": "sha256-FinTyBSNPe8LB40qCSX5kpETzuTgsh2C0u5Rnh8gRCE=",
+        "owner": "emirpasic",
+        "repo": "gods",
+        "rev": "5dd72bf1e03d45ade3a941c9675930ef306c5091",
+        "type": "github"
+      },
+      "original": {
+        "dir": "sets/hashset",
+        "owner": "emirpasic",
+        "repo": "gods",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1669809720,
@@ -67,9 +101,30 @@
     "root": {
       "inputs": {
         "godlv": "godlv",
+        "gods": "gods",
         "golines": "golines",
         "gotest-tools": "gotest-tools",
-        "nixpkgs": "nixpkgs"
+        "hashset": "hashset",
+        "nixpkgs": "nixpkgs",
+        "stack": "stack"
+      }
+    },
+    "stack": {
+      "flake": false,
+      "locked": {
+        "dir": "stacks/arraystacks",
+        "lastModified": 1666026485,
+        "narHash": "sha256-FinTyBSNPe8LB40qCSX5kpETzuTgsh2C0u5Rnh8gRCE=",
+        "owner": "emirpasic",
+        "repo": "gods",
+        "rev": "5dd72bf1e03d45ade3a941c9675930ef306c5091",
+        "type": "github"
+      },
+      "original": {
+        "dir": "stacks/arraystacks",
+        "owner": "emirpasic",
+        "repo": "gods",
+        "type": "github"
       }
     }
   },

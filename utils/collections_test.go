@@ -44,10 +44,10 @@ func TestFilter(t *testing.T) {
 
 }
 
-func TestMap(t *testing.T) {
-	var strs = []string{"peach", "apple", "pear", "plum"}
-	want := []string{"PEACH", "APPLE", "PEAR", "PLUM"}
-	got := Map(strs, strings.ToUpper)
-	Assert(t, want, got)
-
-}
+// func TestMap(t *testing.T) {
+// 	var strs = []string{"peach", "apple", "pear", "plum"}
+// 	want := []string{"PEACH", "APPLE", "PEAR", "PLUM"}
+// 	got := Map(strs, strings.ToUpper)
+// 	Assert(t, want, got)
+//
+// }

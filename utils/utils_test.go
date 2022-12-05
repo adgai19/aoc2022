@@ -14,7 +14,7 @@ func assert[C any](t *testing.T, got, want C) {
 
 func TestReadInput(t *testing.T) {
 	want := "foo\n"
-	got := ReadInput()
+	got := ReadInput("input.txt")
 	assert(t, want, got)
 }
 
@@ -26,8 +26,7 @@ func TestSplitInt(t *testing.T) {
 
 func TestSplitLines(t *testing.T) {
 	want := []string{"foo", "bar"}
-	got := GetLines(`foo
-  bar`)
+	got := GetLines(ReadInput("splitLines.txt"))
 	assert(t, want, got)
 }
 func TestSplitComma(t *testing.T) {

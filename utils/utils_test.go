@@ -13,7 +13,7 @@ func assert[C any](t *testing.T, got, want C) {
 }
 
 func TestReadInput(t *testing.T) {
-	want := "foo\n"
+	want := "foo"
 	got := ReadInput("input.txt")
 	assert(t, want, got)
 }

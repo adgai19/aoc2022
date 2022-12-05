@@ -27,12 +27,20 @@
       url = "github:emirpasic/gods?dir=stacks/arraystacks";
       flake = false;
     };
+
+  devshell.url = "github:numtide/devshell";
   };
 
-  outputs = { self, nixpkgs, golines, godlv,gotest-tools,gods,hashset,stack }@inputs:
+  outputs = { self, nixpkgs, golines, godlv,gotest-tools,gods,hashset,stack,devshell }@inputs:
     let
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      # pkgs = nixpkgs.legacyPackages.${system};
+
+pkgs = import nixpkgs {
+          inherit system;
+
+          overlays = [ devshell.overlay ];
+        };
       golines = pkgs.buildGoModule  {
         pname = "golines";
         src = inputs.golines;
@@ -85,8 +93,14 @@
       };
     in
     {
-      devShells.${system}.default = pkgs.mkShell {
-        nativeBuildInputs = [
+      devShells.${system}.default = pkgs.devshell.mkShell {
+        commands = [
+          {
+            name = "runner";
+            command = "${pkgs.nodePackages.nodemon}/bin/nodemon --watch . --exec ${pkgs.go}/bin/go test ./... -e go";
+          }
+        ];
+        packages = [
           godlv
           gods
           golines
@@ -107,10 +121,13 @@
           pkgs.mockgen
           pkgs.reftools
           pkgs.richgo
+          pkgs.nodePackages.nodemon
         ];
+        env = [{
+          name = "PATH";
+          prefix = "$(go env GOPATH)/bin";
+        }];
 
-        buildInputs = [ ];
-        PATH = "$PATH:$(go env GOPATH)/bin";
       };
     };
 }

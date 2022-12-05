@@ -56,9 +56,6 @@ func Day2a(input string) int {
 	lines := utils.GetLines(input)
 	score := 0
 	for _, line := range lines {
-		if line == "" {
-			continue
-		}
 		sel := strings.Fields(line)
 		score += exactScore[sel[0]][sel[1]]
 	}
@@ -69,9 +66,6 @@ func Day2b(input string) int {
 	lines := utils.GetLines(input)
 	score := 0
 	for _, line := range lines {
-		if line == "" {
-			continue
-		}
 		sel := strings.Fields(line)
 		score += exactScore[sel[0]][forDesiredOutcome[sel[0]][sel[1]]]
 	}

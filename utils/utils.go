@@ -10,13 +10,13 @@ import (
 
 func ReadInput(filename string) string {
 	file, _ := ioutil.ReadFile(filename)
-	input := string(file)
+	input := strings.TrimSuffix(string(file), "\n")
+
 	return input
 }
 
 func ReadInputTest() string {
-	file, _ := ioutil.ReadFile("input_test.txt")
-	input := string(file)
+	input := ReadInput("input_test.txt")
 	return input
 }
 func SplitInt(input string) []int {

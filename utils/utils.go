@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"io/ioutil"
+	"os"
 	"reflect"
 	"strconv"
 	"strings"
@@ -9,7 +9,7 @@ import (
 )
 
 func ReadInput(filename string) string {
-	file, _ := ioutil.ReadFile(filename)
+	file, _ := os.ReadFile(filename)
 	input := strings.TrimSuffix(string(file), "\n")
 
 	return input
@@ -19,6 +19,7 @@ func ReadInputTest() string {
 	input := ReadInput("input_test.txt")
 	return input
 }
+
 func SplitInt(input string) []int {
 	split := strings.Split(input, ",")
 	out := make([]int, 0)
@@ -28,17 +29,19 @@ func SplitInt(input string) []int {
 	}
 	return out
 }
+
 func SplitComma(input string) []string {
 	return strings.Split(input, ",")
 }
+
 func GetLines(input string) []string {
 	out := strings.Split(input, "\n")
 	for i, e := range out {
 		out[i] = strings.TrimSpace(e)
 	}
 	return out
-
 }
+
 func Assert[C any](t *testing.T, got, want C) {
 	t.Helper()
 	if !reflect.DeepEqual(want, got) {

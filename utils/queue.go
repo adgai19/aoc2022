@@ -11,6 +11,9 @@ func (s *Queue[T]) IsEmpty() bool {
 func (s *Queue[T]) Enque(item T) {
 	*s = append(*s, item) // Simply append the new value to the end of the stack
 }
+func (s *Queue[T]) List() []T {
+	return *s
+}
 
 // Remove and return top element of stack. Return false if stack is empty.
 func (s *Queue[T]) Deque() (T, bool) {
